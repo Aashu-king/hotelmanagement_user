@@ -1,0 +1,50 @@
+<div class="reservation-container">
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+      <div class="reservation-header">
+        <h3>Book Your Stay</h3>
+      </div>
+  
+      <div class="reservation-grid">
+        <div class="reservation-field">
+          <label for="check-in">Check-in</label>
+          <mat-form-field appearance="outline">
+            <input matInput [matDatepicker]="checkInPicker" formControlName="checkIn" placeholder="Choose date">
+            <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+            <mat-datepicker #checkInPicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+  
+        <div class="reservation-field">
+          <label for="check-out">Check-out</label>
+          <mat-form-field appearance="outline">
+            <input matInput [matDatepicker]="checkOutPicker" formControlName="checkOut" placeholder="Choose date">
+            <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+            <mat-datepicker #checkOutPicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+  
+        <div class="reservation-field">
+          <label for="rooms">Rooms</label>
+          <mat-form-field appearance="outline">
+            <mat-select formControlName="rooms">
+              <mat-option *ngFor="let room of [1, 2, 3, 4, 5]" [value]="room">{{room}} Room{{ room > 1 ? 's' : '' }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+  
+        <div class="reservation-field">
+          <label for="guests">Guests</label>
+          <mat-form-field appearance="outline">
+            <mat-select formControlName="guests">
+              <mat-option *ngFor="let guest of [1, 2, 3, 4, 5]" [value]="guest">{{guest}} Guest{{ guest > 1 ? 's' : '' }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <div class="reservation-submit">
+        <button mat-raised-button color="primary" type="submit" (click)="book()">Book Now</button>
+      </div>
+    </form>
+  </div>
+  
