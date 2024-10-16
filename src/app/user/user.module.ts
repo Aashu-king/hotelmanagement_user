@@ -14,6 +14,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { Overlay } from '@angular/cdk/overlay';
 import { AvailableRoomsComponent } from './available-rooms/available-rooms.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { OffersComponent } from './offers/offers.component';
+import { MenuComponent } from './menu/menu.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { AvailableRoomsComponent } from './available-rooms/available-rooms.compo
     DashboardComponent,
     CustomCarouselComponent,
     RoomReservationComponent,
-    AvailableRoomsComponent
+    AvailableRoomsComponent,
+    AboutusComponent,
+    OffersComponent,
+    MenuComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,

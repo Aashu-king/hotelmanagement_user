@@ -1,0 +1,64 @@
+
+.elementor-7772 .elementor-element.elementor-element-08e2649:not(.elementor-motion-effects-element-type-background),
+.elementor-7772 .elementor-element.elementor-element-08e2649>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+    max-width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.elementor-7772 .elementor-element.elementor-element-033bd3b {
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    max-height: 500px;
+    overflow: hidden;
+    margin: auto;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+  }
+  
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .carousel-control.prev {
+    left: 10px;
+  }
+  
+  .carousel-control.next {
+    right: 10px;
+  }
+  
+  .carousel-control:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
