@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { HttpClientModule } from '@angular/common/http';
 import { UserRoutingModule } from './user-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CustomCarouselComponent } from './custom-carousel/custom-carousel.component';
@@ -39,7 +39,8 @@ import { ContactComponent } from './contact/contact.component';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [
     {
