@@ -376,11 +376,18 @@
             </nav>
             <div>
                 <div class="qodef-widget-holder qodef--one">
+                    <div class="reservation-container">
+                        <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+                          <div class="reservation-submit">
+                            <button mat-raised-button color="primary" type="submit" style="height: 55px;background-color: rgb(4, 87, 128);">Book Now</button>
+                          </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <form action="https://carsten.qodeinteractive.com/" class="qodef-search-cover-form" method="get">
+    <form  class="qodef-search-cover-form" method="get">
         <div class="qodef-m-inner">
             <input type="text" placeholder="Search" name="s" class="qodef-m-form-field" autocomplete="off"
                 required />

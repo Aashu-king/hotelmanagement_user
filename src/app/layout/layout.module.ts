@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FullComponent } from './full/full.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlankComponent } from './blank/blank.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { BlankComponent } from './blank/blank.component';
   ],
   imports: [
     CommonModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class LayoutModule { }

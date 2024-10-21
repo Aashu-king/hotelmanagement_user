@@ -1,0 +1,19 @@
+#qodef-page-footer-top-area-inner {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    border-top: 0 solid var(--qode-color-rock);
+}
+#qodef-page-footer-top-area {
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#qodef-page-footer-bottom-area-inner {
+    padding-top: 11px;
+    padding-bottom: 10px;
+    border-top: 0 solid var(--qode-color-rock);
+}
+#qodef-page-content-bottom {
+    background-color: rgb(231 231 231) !important;
+}
