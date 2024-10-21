@@ -6,6 +6,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { OffersComponent } from './offers/offers.component';
 import { MenuComponent } from './menu/menu.component';
 import { ContactComponent } from './contact/contact.component';
+import { RoomReservationComponent } from './room-reservation/room-reservation.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,7 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
-        path: 'available-rooms',
+        path: 'availablerooms',
         component: AvailableRoomsComponent
       },
       {
@@ -40,6 +41,10 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent
       },
+      {
+        path: 'reservation',
+        component: RoomReservationComponent
+      }
     ] 
   }
 ];

@@ -1,51 +1,125 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
 .reservation-container {
-    background-color: #F9F9F9;
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 10px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form header styling */
+.form-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.form-header button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-header button:hover {
+  background-color: #0056b3;
+}
+
+/* Form field styling */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+form mat-form-field,
+form select,
+form input[type="date"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+}
+
+form select, 
+form input[type="number"], 
+form input[type="date"], 
+form input[type="text"], 
+form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+mat-form-field {
+  display: block;
+}
+
+mat-form-field .mat-input-element {
+  padding: 10px;
+}
+
+form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Form group styling for payment and billing forms */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Styling for inputs inside form groups */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Button styling for saving */
+button[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
   }
-  
-  .reservation-header h3 {
-    font-family: 'Serif', sans-serif;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .reservation-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-  
-  .reservation-field label {
-    display: block;
-    margin-bottom: 5px;
-    font-family: 'Serif', sans-serif;
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .reservation-field mat-form-field {
-    width: 100%;
-  }
-  
-  .reservation-submit {
-    margin-top: 20px;
-    text-align: right;
-  }
-  
-  .reservation-submit button {
-    padding: 10px 20px;
-    background-color: #192A56;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Serif', sans-serif;
-  }
-  
-  .reservation-submit button:hover {
-    background-color: #1C305B;
-  }
-  
-  
+}

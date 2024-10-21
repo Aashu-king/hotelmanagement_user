@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { GuestComponent } from '../guest/guest.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,8 +11,18 @@ import { FormBuilder } from '@angular/forms';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
-  constructor(private fb : FormBuilder,private http : HttpClient){}
+  reservationForm !: FormGroup;
+  isGuestFormSaved = false;
+  
+  constructor(private fb : FormBuilder,private http : HttpClient, private router: Router,public dialog: MatDialog){}
     ngOnInit(): void {
+      this.reservationForm = this.fb.group({
+        guestName: ['', Validators.required],  // Example form fields, add your fields
+        roomNumber: ['', Validators.required],
+        checkInDate: ['', Validators.required],
+        checkOutDate: ['', Validators.required],
+        // Add more form controls as needed
+      });
       this.getDataForRoom()
     }
 
@@ -19,5 +32,40 @@ export class DashboardComponent implements OnInit {
         
       })
     }
+
     
+  onSubmit() {
+    if (this.isGuestFormSaved) {
+      // If guest form is already saved, directly save the reservation form
+      this.saveReservation();
+    } else {
+      // If guest form is not saved, open guest form dialog
+      this.openGuestForm();
+    }
+  }
+    
+  saveReservation() {
+    console.log('Reservation form submitted successfully:', this.reservationForm.value);
+    // Add logic to save the reservation or navigate to a new page
+    this.router.navigate(['/user/reservation']);
+  }
+
+  openGuestForm(): void {
+    const dialogRef = this.dialog.open(GuestComponent, {
+      height: '80%',
+      width: '80%',
+      panelClass: 'custom-dialog-container',
+      position: { left: '280px', top: '60px' }
+    });
+
+    // When the dialog closes, check if the guest form was filled
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // If the guest form is successfully filled, set the flag to true
+        this.isGuestFormSaved = true;
+        console.log('Guest form saved:', result);
+        this.saveReservation();
+      }
+    });
+  }
 }

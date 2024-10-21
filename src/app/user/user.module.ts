@@ -18,6 +18,9 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { OffersComponent } from './offers/offers.component';
 import { MenuComponent } from './menu/menu.component';
 import { ContactComponent } from './contact/contact.component';
+import { GuestComponent } from './guest/guest.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import { ContactComponent } from './contact/contact.component';
     AboutusComponent,
     OffersComponent,
     MenuComponent,
-    ContactComponent
+    ContactComponent,
+    GuestComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +44,11 @@ import { ContactComponent } from './contact/contact.component';
     MatSelectModule,
     MatButtonModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatDialogModule
   ],
   providers: [
     {
